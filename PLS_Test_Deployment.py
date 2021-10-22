@@ -38,6 +38,8 @@ def download_link(object_to_download, download_filename, download_link_text):
 
     return f'<a href="data:file/txt;base64,{b64}" download="{download_filename}">{download_link_text}</a>'
 #%%
+st.title("Partial Least Squares Online Prediction Module")
+
 trained_model = st.file_uploader("Upload your trained PLS Model here")
 if trained_model is not None:
     loaded_model = pickle.load(trained_model)
@@ -48,8 +50,6 @@ else:
     st.stop()
     
 #%%
-st.title("Partial Least Squares Cis-DP Online Prediction by IR")
-
     
 ### Load in the test data ###
 uploaded_csv = st.file_uploader("Upload your spectra for prediction")
@@ -73,3 +73,5 @@ if uploaded_csv is not None:
     if st.button('Download Results as CSV'):
         tmp_download_link = download_link(df_out, 'Predicted_Results.csv', 'Click here to download your data!')
         st.markdown(tmp_download_link, unsafe_allow_html=True)
+
+
