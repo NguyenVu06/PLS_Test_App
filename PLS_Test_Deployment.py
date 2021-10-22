@@ -72,4 +72,4 @@ if uploaded_csv is not None:
     #download predicted result table
     if st.button('Download Results as CSV'):
         tmp_download_link = download_link(df_out, 'Predicted_Results.csv', 'Click here to download your data!')
-    st.markdown(tmp_download_link, unsafe_allow_html=True)
+        st.markdown(tmp_download_link, unsafe_allow_html=True)
